@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="bd" class="service.BlueDart"/>
+     <bean id="dhl" class="service.Dhl"/>
+      <bean id="fedex" class="service.Fedex"/>
+    
+    <bean id="amz" class="main.Amazon">
+      <constructor-arg  ref="fedex" name="service"></constructor-arg>
+      
+     <property ref="dhl" name="service"></property>
+     </bean>
+	
+	
+</beans>
