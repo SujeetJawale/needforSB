@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <!-- 	<bean id="bd" class="com.sujeet.services.BlueDart"/>
+     <bean id="dhl" class="com.sujeet.services.DHL" primary="true"/>
+      <bean id="fedEx" class="com.sujeet.services.FedEx"/>
+    
+    <bean id="amz" class="com.sujeet.main.Amazon" autowire="byType"/>  -->
+    
+     <!-- 	<bean id="service" class="com.sujeet.services.BlueDart"/>
+     <bean id="dhl" class="com.sujeet.services.DHL" />
+      <bean id="fedEx" class="com.sujeet.services.FedEx"/>
+    
+    <bean id="amz" class="com.sujeet.main.Amazon" autowire="byName"/> -->
+    
+    
+    	<!-- <bean id="bd" class="com.sujeet.services.BlueDart"/>
+     <bean id="dhl" class="com.sujeet.services.DHL" />
+      <bean id="fedEx" class="com.sujeet.services.FedEx" primary="true"/>
+    
+    <bean id="amz" class="com.sujeet.main.Amazon" autowire="constructor"/> -->
+    
+   <!--   <bean id="bd" class="com.sujeet.services.BlueDart" autowire-candidate="false"/>
+     <bean id="dhl" class="com.sujeet.services.DHL" autowire-candidate="false"/>
+     <bean id="fedEx" class="com.sujeet.services.FedEx"/>
+    
+    <bean id="amz" class="com.sujeet.main.Amazon" autowire="byType"/>  -->
+  
+      <bean id="bd" class="com.sujeet.services.BlueDart" />
+     <bean id="dhl" class="com.sujeet.services.DHL"/>
+     <bean id="fedEx" class="com.sujeet.services.FedEx"/>
+    
+    <bean id="amz" class="com.sujeet.main.Amazon" autowire="no"> 
+      
+    <property ref="fedEx" name="service"/>
+    </bean>
+
+
+</beans>
